@@ -1,9 +1,9 @@
 import streamlit as st
-import google.generative_ai as genai
+import google.generativeai as genai
 import PyPDF2 as pdf
 
 # Get the API key from Streamlit secrets
-api_key = st.secrets["google_api_key"]
+api_key = st.secrets["GOOGLE_API_KEY"]
 
 # Configure the API key for the generative AI
 genai.configure(api_key=api_key)
