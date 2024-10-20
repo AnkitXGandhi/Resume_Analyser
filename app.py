@@ -4,6 +4,7 @@ import google.generativeai as genai
 import PyPDF2 as pdf
 from dotenv import load_dotenv
 
+os.system("pip install google.generativeai")
 
 load_dotenv()
 
@@ -14,7 +15,7 @@ api_key = os.getenv('GOOGLE_API_KEY')
 genai.configure(api_key=api_key)
 
 def get_gemini_response(input):
-    model = genai.GenerativeModel('gemini-pro')
+    model = genai.GenerativeModel('gemini-1.5-flash')
     response = model.generate_content(input)
     return response.text
 
