@@ -1,5 +1,5 @@
 import streamlit as st
-import google.generativeai as genai
+import google.generative_ai as genai
 import PyPDF2 as pdf
 
 # Get the API key from Streamlit secrets
