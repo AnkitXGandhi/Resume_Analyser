@@ -1,21 +1,12 @@
-import os
 import streamlit as st
 import google.generativeai as genai
 import PyPDF2 as pdf
-from dotenv import load_dotenv
 
-# Load environment variables from .env file
-load_dotenv()
+# Get the API key from Streamlit secrets
+api_key = st.secrets["google_api_key"]
 
-# Get the API key from the environment variable
-api_key = os.getenv('GOOGLE_API_KEY')
-
-# Check if the API key is loaded correctly
-if api_key is None:
-    st.error("API key not found. Please check your .env file.")
-else:
-    # Configure the API key for the generative AI
-    genai.configure(api_key=api_key)
+# Configure the API key for the generative AI
+genai.configure(api_key=api_key)
 
 def get_gemini_response(input):
     model = genai.GenerativeModel('gemini-1.5-flash')
