@@ -4,8 +4,7 @@ import google.generativeai as genai
 import PyPDF2 as pdf
 from dotenv import load_dotenv
 
-os.system("pip install requirements.txt")
-
+# Load environment variables from .env file
 load_dotenv()
 
 # Get the API key from the environment variable
@@ -76,4 +75,7 @@ if submit:
         text = input_pdf_text(uploaded_file)
         input_prompt = input_prompt_template.format(jd=jd, text=text)
         response = get_gemini_response(input_prompt)
-        st.subheader(response)
+        st.subheader("Generated Response:")
+        st.write(response)  # Display the response from the model
+    else:
+        st.error("Please upload your resume before submitting.")
