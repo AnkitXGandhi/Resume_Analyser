@@ -4,7 +4,7 @@ import google.generativeai as genai
 import PyPDF2 as pdf
 from dotenv import load_dotenv
 
-os.system("pip install -r requirements.txt")
+os.system("pip install requirements.txt")
 
 load_dotenv()
 
