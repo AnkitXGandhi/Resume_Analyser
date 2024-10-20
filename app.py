@@ -1,10 +1,10 @@
 import os
 import streamlit as st
-import google-generativeai as genai
+import google.generativeai as genai
 import PyPDF2 as pdf
 from dotenv import load_dotenv
 
-os.system("pip install google-generativeai")
+os.system("pip install google.generativeai")
 
 load_dotenv()
 
