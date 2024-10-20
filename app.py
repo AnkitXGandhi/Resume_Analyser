@@ -10,8 +10,12 @@ load_dotenv()
 # Get the API key from the environment variable
 api_key = os.getenv('GOOGLE_API_KEY')
 
-# Configure the API key for the generative AI
-genai.configure(api_key=api_key)
+# Check if the API key is loaded correctly
+if api_key is None:
+    st.error("API key not found. Please check your .env file.")
+else:
+    # Configure the API key for the generative AI
+    genai.configure(api_key=api_key)
 
 def get_gemini_response(input):
     model = genai.GenerativeModel('gemini-1.5-flash')
